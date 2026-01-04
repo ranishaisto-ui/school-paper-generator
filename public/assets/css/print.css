@@ -1,0 +1,629 @@
+/**
+ * School Paper Generator - Print Styles
+ * Optimized styles for printing exam papers
+ */
+
+/* Reset for printing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide elements not needed for print */
+.no-print,
+.paper-actions,
+.exam-timer,
+.student-info-section,
+.answer-sheet,
+.spg-modal,
+.dropdown,
+.toggle-section-btn,
+.toggle-answers-btn,
+.font-size-btn,
+.dark-mode-toggle,
+.highlight-question,
+.save-progress,
+.load-progress,
+.clear-answers,
+.print-section-btn,
+.notification,
+.time-up-alert,
+.exam-results-modal,
+.spg-notification,
+#start-exam-btn,
+#submit-exam,
+#reset-answers {
+    display: none !important;
+}
+
+/* Show print-only elements */
+.print-only {
+    display: block !important;
+}
+
+/* Base styles for print */
+body {
+    font-family: "Times New Roman", "Georgia", serif !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+/* Paper container */
+.spg-paper-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    break-inside: avoid !important;
+}
+
+/* Header styles for print */
+.paper-header {
+    text-align: left !important;
+    border-bottom: 2px solid #000000 !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 25px !important;
+    background: white !important;
+    color: #000000 !important;
+    page-break-after: avoid !important;
+}
+
+.school-logo img {
+    max-height: 60px !important;
+    max-width: 180px !important;
+    filter: none !important;
+}
+
+.school-info h1 {
+    font-size: 18pt !important;
+    margin: 10px 0 !important;
+    color: #000000 !important;
+}
+
+.school-address {
+    font-size: 10pt !important;
+    color: #666666 !important;
+    margin: 5px 0 !important;
+}
+
+.paper-title-section {
+    margin: 15px 0 !important;
+    padding: 10px 0 !important;
+    border-top: 1px solid #cccccc !important;
+    border-bottom: 1px solid #cccccc !important;
+    page-break-after: avoid !important;
+}
+
+.paper-title {
+    font-size: 16pt !important;
+    margin: 0 0 5px 0 !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+.paper-code {
+    font-size: 10pt !important;
+    color: #666666 !important;
+}
+
+.paper-meta {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 15px !important;
+    font-size: 10pt !important;
+    page-break-after: avoid !important;
+}
+
+@media print and (max-width: 768px) {
+    .paper-meta {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+.meta-item {
+    text-align: left !important;
+}
+
+.meta-label {
+    font-weight: bold !important;
+    display: block !important;
+    margin-bottom: 2px !important;
+}
+
+.meta-value {
+    font-size: 11pt !important;
+}
+
+/* Instructions */
+.paper-instructions {
+    background: #f9f9f9 !important;
+    border: 1px solid #dddddd !important;
+    padding: 15px !important;
+    margin-bottom: 20px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+.paper-instructions h3 {
+    font-size: 13pt !important;
+    margin: 0 0 10px 0 !important;
+    color: #000000 !important;
+}
+
+.instructions-content {
+    font-size: 11pt !important;
+    line-height: 1.3 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.instructions-content p {
+    margin: 8px 0 !important;
+}
+
+.instructions-content ul,
+.instructions-content ol {
+    margin-left: 20px !important;
+}
+
+.instructions-content li {
+    margin: 5px 0 !important;
+}
+
+/* Questions */
+.paper-questions {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.question-section {
+    margin-bottom: 30px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+.section-title {
+    font-size: 14pt !important;
+    margin: 0 0 15px 0 !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid #000000 !important;
+    color: #000000 !important;
+    page-break-after: avoid !important;
+}
+
+.question {
+    margin-bottom: 20px !important;
+    padding: 15px !important;
+    border: 1px solid #eeeeee !important;
+    background: white !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+.question-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px dashed #cccccc !important;
+}
+
+.question-number {
+    font-weight: bold !important;
+    font-size: 12pt !important;
+}
+
+.question-marks {
+    font-weight: bold !important;
+    color: #000000 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.question-content {
+    margin: 0 !important;
+}
+
+.question-text {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
+}
+
+.question-text p {
+    margin: 8px 0 !important;
+}
+
+/* MCQ Options */
+.question-options {
+    margin: 15px 0 !important;
+}
+
+.option {
+    margin: 8px 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    break-inside: avoid !important;
+}
+
+.option-input {
+    display: none !important;
+}
+
+.option-label {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    cursor: default !important;
+    padding: 4px 0 !important;
+}
+
+.option-letter {
+    font-weight: bold !important;
+    min-width: 20px !important;
+}
+
+.option-text {
+    flex: 1 !important;
+    line-height: 1.3 !important;
+}
+
+/* True/False options */
+.true-false {
+    display: flex !important;
+    gap: 20px !important;
+}
+
+.true-false .option {
+    flex: 1 !important;
+}
+
+/* Answer area */
+.answer-area {
+    margin: 15px 0 !important;
+}
+
+.short-answer,
+.long-answer {
+    width: 100% !important;
+    min-height: 80px !important;
+    border: 1px solid #cccccc !important;
+    background: white !important;
+    font-family: "Courier New", monospace !important;
+    font-size: 11pt !important;
+    line-height: 1.3 !important;
+    padding: 10px !important;
+    margin: 0 !important;
+}
+
+.long-answer {
+    min-height: 150px !important;
+}
+
+/* Correct answers (when shown) */
+.correct-answer {
+    margin-top: 15px !important;
+    padding: 12px !important;
+    border: 1px solid #4CAF50 !important;
+    background: #f8fff8 !important;
+    font-size: 10pt !important;
+    break-inside: avoid !important;
+}
+
+.correct-answer strong {
+    display: block !important;
+    margin-bottom: 5px !important;
+    color: #2E7D32 !important;
+}
+
+.correct-answer p {
+    margin: 5px 0 !important;
+    line-height: 1.3 !important;
+}
+
+.answer-explanation {
+    margin-top: 10px !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed #4CAF50 !important;
+}
+
+.answer-explanation strong {
+    color: #388E3C !important;
+}
+
+/* Footer */
+.paper-footer {
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid #cccccc !important;
+    font-size: 9pt !important;
+    color: #666666 !important;
+    page-break-before: avoid !important;
+}
+
+.footer-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.paper-info p {
+    margin: 3px 0 !important;
+}
+
+/* Page setup */
+@page {
+    size: A4;
+    margin: 2cm 1.5cm;
+    
+    /* Page numbers */
+    @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-size: 9pt;
+        color: #666666;
+        font-family: "Times New Roman", serif;
+    }
+    
+    @bottom-left {
+        content: "Generated by School Paper Generator";
+        font-size: 9pt;
+        color: #666666;
+        font-family: "Times New Roman", serif;
+    }
+}
+
+/* First page - no header/footer */
+@page :first {
+    margin-top: 1.5cm;
+    
+    @bottom-right {
+        content: "";
+    }
+    
+    @bottom-left {
+        content: "";
+    }
+}
+
+/* Left pages (even) */
+@page :left {
+    margin-right: 2cm;
+    margin-left: 1.5cm;
+}
+
+/* Right pages (odd) */
+@page :right {
+    margin-left: 2cm;
+    margin-right: 1.5cm;
+}
+
+/* Page breaks */
+.page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+}
+
+.avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+/* Images */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Tables */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 10px 0 !important;
+    break-inside: avoid !important;
+}
+
+table th,
+table td {
+    border: 1px solid #cccccc !important;
+    padding: 8px !important;
+    text-align: left !important;
+    font-size: 10pt !important;
+}
+
+table th {
+    background: #f2f2f2 !important;
+    font-weight: bold !important;
+}
+
+/* Code blocks */
+pre, code {
+    font-family: "Courier New", monospace !important;
+    font-size: 10pt !important;
+    background: #f8f8f8 !important;
+    border: 1px solid #dddddd !important;
+    padding: 8px !important;
+    overflow-x: auto !important;
+    break-inside: avoid !important;
+}
+
+/* Lists */
+ul, ol {
+    margin-left: 20px !important;
+    break-inside: avoid !important;
+}
+
+li {
+    margin: 5px 0 !important;
+    break-inside: avoid !important;
+}
+
+/* Links */
+a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    color: #000000 !important;
+}
+
+h1 { font-size: 18pt !important; }
+h2 { font-size: 16pt !important; }
+h3 { font-size: 14pt !important; }
+h4 { font-size: 13pt !important; }
+h5 { font-size: 12pt !important; }
+h6 { font-size: 11pt !important; }
+
+/* Watermark for draft papers */
+body.draft-mode:before {
+    content: "DRAFT";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 120pt;
+    color: rgba(0,0,0,0.1);
+    z-index: 9999;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+/* Answer sheet for printing */
+.print-answer-sheet {
+    page-break-before: always !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    border: 1px solid #cccccc !important;
+}
+
+.print-answer-sheet h3 {
+    margin: 0 0 15px 0 !important;
+    text-align: center !important;
+}
+
+.answer-grid-print {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 15px !important;
+}
+
+.answer-item-print {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+}
+
+.answer-number-print {
+    font-weight: bold !important;
+    min-width: 25px !important;
+}
+
+.answer-options-print {
+    display: flex !important;
+    gap: 3px !important;
+}
+
+.answer-option-print {
+    width: 18px !important;
+    height: 18px !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 9pt !important;
+}
+
+/* Special handling for landscape papers */
+@page landscape {
+    size: landscape;
+}
+
+.landscape-page {
+    page: landscape;
+}
+
+/* Avoid widows and orphans */
+p, h1, h2, h3, h4, h5, h6 {
+    orphans: 3;
+    widows: 3;
+}
+
+/* Print specific classes */
+.print-header {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+}
+
+.print-footer {
+    text-align: center !important;
+    margin-top: 20px !important;
+    font-size: 9pt !important;
+    color: #666666 !important;
+}
+
+/* Exam results print styles */
+.exam-results-print {
+    page-break-before: always !important;
+}
+
+.results-header-print {
+    text-align: center !important;
+    margin-bottom: 30px !important;
+}
+
+.results-summary-print {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    margin-bottom: 30px !important;
+}
+
+.summary-item-print {
+    text-align: center !important;
+    padding: 15px !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 4px !important;
+}
+
+.summary-label-print {
+    display: block !important;
+    font-size: 10pt !important;
+    color: #666666 !important;
+    margin-bottom: 5px !important;
+}
+
+.summary-value-print {
+    display: block !important;
+    font-size: 14pt !important;
+    font-weight: bold !important;
+    color: #000000 !important;
+}
+
+/* Ensure good print quality */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Improve text rendering */
+    body
